@@ -1,0 +1,30 @@
+{# templates/user/profile.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('styles/user-admin-pages.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block pagecontent %}
+    Your Profile
+    <hr>
+    <div class="flex-centered">
+        {{ form_start(user_form) }}
+        {{ form_row(user_form._token) }}
+
+        {{ form_errors(user_form.name) }}
+        {{ form_label(user_form.name,'Username') }}
+        {{ form_widget(user_form.name) }}
+
+        {{ form_errors(user_form.plainpassword) }}
+        {{ form_label(user_form.plainpassword,'New Password') }}
+        {{ form_widget(user_form.plainpassword,{'attr' : {'placeholder' : 'Leave blank unless changing password'}}) }}
+
+        <label class="faint-text">On a successful update you will be asked to log in again</label>
+
+        {# NOTE: this is the name of the sumbit field as defined in our Form\UserType #}
+        {{ form_widget(user_form.save, { 'label': 'Update' }) }}
+    </div>
+{% endblock %}

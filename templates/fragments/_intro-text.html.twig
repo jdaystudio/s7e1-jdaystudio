@@ -1,0 +1,55 @@
+    <div id="intro-text">
+    A skeleton example project built on Symfony 7.0, by John Day.<br>
+    <br>
+     Using some default recommended packages. Limited scope and contrived requirements. Includes solutions to a few problems I found difficult to research/solve, esp enforcing single browser access and the auth tests. Default user is "admin" with password "johnday".<br>
+     <br>
+     Code base can be found at "github... "<br><br>
+    <div class="title">Database</div>
+    - Users table<br>
+    - - database connection<br>
+    - - initial migration (table setup)<br>
+    - - doctrine EventListener (sanitizer)<br>
+    <div class="title">Basic authentication/authorization setup</div>
+    - login page<br>
+    - auto logout and delete<br>
+    - - using login/logout Symfony Event Subscribers<br>
+    - login throttling<br>
+    - single session control (only one browser at a time)<br>
+    - - using custom Voter and AccessDenied Listener<br>
+    <div class="title">Form/object validations</div>
+    - including a custom validator (with optional parameter)<br>
+    - user model mapped by a FormType<br>
+    - alternative validation options<br>
+    - - using Validation Groups<br>
+    - using a placeholder attribute<br>
+    - - with FormType and Twig<br>
+    <div class="title">Routing</div>
+    - basic symfony authorization zones<br>
+    - a DELETE route with optional parameter<br>
+    - - returns HTTP Status code only<br>
+    - 1 Public, 1 Private Json API endpoint<br>
+    - custom auth voter integration<br>
+    <div class="title">Basic display and web assets usage</div>
+    - nested/reusable twig templates (fragments)<br>
+    - basic include of the Jquery library and setup of global var<br>
+    - using separate css and javascript files for different pages<br>
+    <div class="title">TwigExtension functions</div>
+    - an App Button with<br>
+    - - route-name/label/data-value parameters<br>
+    - - logs errors for debug
+    - a sliding checkbox replacement<br>
+    <div class="title">Custom Command</div>
+    - for (re)creating of admin user<br>
+    - - with console input<br>
+    - - object validation based on command options
+    <div class="title">Tests</div>
+    - examples of a Unit, Integration and Application test<br>
+    - - using services in Integration testing<br>
+    - - alternative test environment parameters<br>
+    <div class="title">Application specific functionality</div>
+    - a single admin, NO self registration<br>
+    - example application parameters (time limits)<br>
+    - live running status of users<br>
+    <br>
+
+    </div>

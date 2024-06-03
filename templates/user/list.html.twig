@@ -1,0 +1,48 @@
+{# templates/user/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Users{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('styles/user-admin-pages.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        const deleteUrl = "{{ path('user-delete') }}";
+        const listUrl = "{{ path('users') }}";
+    </script>
+    <script type='module' src="{{ asset('user-manage.js') }}"></script>
+{% endblock %}
+
+{% block pagecontent %}
+    List of users
+    <hr>
+    <div id="user-list" class="flex-col-container">
+
+        <div class="flex-row-container user-row user-row-headings">
+            <div class="user-row-label">
+                Username
+            </div>
+            <div class="user-row-label">
+                Last Logged in
+            </div>
+            <div class="flex-row-container user-row-actions">
+                Actions
+            </div>
+        </div>
+
+        {% for user in users %}
+            {% include 'user/_user_row.html.twig' %}
+        {% endfor %}
+    </div>
+    <hr>
+    <div class="button-row">
+        {% if (users|length < total_allowed) %}
+            {{ appButton('Add User','user-new') }}
+        {% else %}
+            Max users allowed reached
+        {%  endif %}
+    </div>
+{% endblock %}

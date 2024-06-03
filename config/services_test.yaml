@@ -1,0 +1,7 @@
+# Don't really need these different just proving we can run with different settings in the test environment
+# NOTE: had a hard time getting this to kick in until I manually deleted the /cache/test/ folder,
+# all cacheClear commands failed at time of writing
+parameters:
+  app.auto_logout_seconds: 10     # forced logout (don't lower these further, may break tests)
+  app.auto_delete_seconds: 10     # from when user is not logged in, used to garbage collect users
+  app.max_users_allowed: 1        # total users (NOT INC ADMIN)

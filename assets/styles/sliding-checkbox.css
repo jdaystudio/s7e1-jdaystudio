@@ -1,0 +1,77 @@
+/*
+    An example of how to include some global styling using the Asset Manager
+    (based on an example from https://codepen.io was originally SCCS)
+    base size: 24px, height : 30px, width : 60px
+*/
+
+.toggle_checkbox {
+   align-items: center;
+   border-radius: 100px;
+   display: flex;
+   font-weight: 700;
+   margin: auto;
+}
+
+/* Since we can't style the checkbox directly, we "hide" it so we can draw the toggle.*/
+.toggle_checkbox__input {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+/* This style sets the focus ring. The ":not([disabled])" prevents the focus ring from creating a flash when the element is clicked.*/
+.toggle_checkbox__input:not([disabled]):active + .toggle-track,
+.toggle_checkbox__input:not([disabled]):focus + .toggle-track {
+     border: 1px solid transparent;
+     box-shadow: 0px 0px 0px 2px rgb(20,20,20);
+ }
+.toggle_checkbox__input:disabled + .toggle_checkbox-track {
+     cursor: not-allowed;
+     opacity: 0.7;
+ }
+
+.toggle_checkbox-track {
+    background: transparent;
+    border: 1px solid rgba(0,0,0,0.5);
+    border-radius: 100px;
+    cursor: pointer;
+    display: flex;
+    height: 30px;
+    margin-right: 12px;
+    position: relative;
+    width: 60px;
+}
+
+.toggle_checkbox-indicator {
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+    border-radius: 24px;
+    bottom: 3px;
+    display: flex;
+    height: 24px;
+    justify-content: center;
+    left: 2px;
+    position: absolute;
+    transition:1s;
+    width: 24px;
+}
+
+.toggle_checkbox-checkMark {
+    fill: rgb(255,255,255);
+    height: 20px;
+    width: 20px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.toggle_checkbox__input:checked + .toggle_checkbox-track .toggle_checkbox-indicator {
+    background: rgb(20, 20, 20);
+    transform: translateX(30px);
+}
+.toggle_checkbox__input:checked + .toggle_checkbox-track .toggle_checkbox-checkMark {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}

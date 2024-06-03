@@ -1,0 +1,33 @@
+.user-row:hover{
+    background-color: #ccc;
+}
+
+.user-row-label{
+    -webkit-flex: 1;
+    flex: 1;
+    padding: 1em;
+    align-self: center;
+}
+
+.user-row-actions{
+    -webkit-flex: 1;
+    flex: 1;
+    align-self: center;
+    justify-content: flex-end;
+}
+
+.user-row .app-button-label{
+    padding: 0.25em;
+}
+
+#user-list .app-button{
+    padding: 0;
+}
+
+.user-row-headings{
+    opacity: 0.5;
+}
+
+.user-name{
+    display:inline;
+}

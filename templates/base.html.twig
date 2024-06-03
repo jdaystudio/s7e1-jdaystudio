@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>jd</text></svg>">
+
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+
+            {# only allow public status feed on login page#}
+            {% if ('app_login' == app.request.get('_route')) %}
+                <script>
+                    const statusUrl = "{{ path('admin-status') }}";
+                </script>
+                <script type='module' src="{{ asset('login.js') }}"></script>
+            {% else %}
+                <script>
+                    const app_uid = {{ app.user?app.user.id:0 }}
+                    const statusUrl = "{{ path('user-status') }}";
+                </script>
+                <script type='module' src="{{ asset('base.js') }}"></script>
+            {% endif %}
+
+        {% endblock %}
+    </head>
+
+    <body>
+    <div id="page-wrapper">
+    {% block body %}
+
+        {% block topbar %}
+            {% include('fragments/_topbar.html.twig') %}
+        {% endblock %}
+
+        <div class="flex-row-container">
+
+            {% block sidebar %}
+                {% include('fragments/_sidebar.html.twig') %}
+            {%  endblock %}
+
+            <div id="page-content">
+            {% block pagecontent %}
+                Default content.
+            {% endblock %}
+            </div>
+
+        </div>
+
+    {% endblock %}
+    </div>
+
+    </body>
+
+</html>

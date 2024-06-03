@@ -1,0 +1,23 @@
+.app-button{
+    background: rgba(128, 128, 128, 1.0);
+    border: 1px solid black;
+    margin: 3px;
+}
+
+.app-button:hover{
+    background: rgba(192, 192, 192, 1.0);
+}
+
+.app-button a{
+    color: #ccc;
+    text-decoration: none;
+}
+
+.app-button a:hover{
+    color: #fff;
+}
+
+.app-button{
+    text-align: center;
+    padding: 0.5em 1em 0.5em 1em;
+}

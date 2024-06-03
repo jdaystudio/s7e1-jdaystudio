@@ -1,0 +1,17 @@
+<div id="topbar-wrapper">
+    {%  if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        <div class="flex-row-container">
+                <div id="user-welcome">Hi {{ app.user.name }}
+                    <div class="livestatusfeed userstatus-{{ app.user.id }}" data-id="{{ app.user.id }}"></div>
+                </div>
+
+                <div id='prime-button-area'>
+                    <div class="flex-row-container">
+                        {{ appButton('Home','home') }}
+                        {# logout path as defined in security.yaml #}
+                        {{ appButton('Logout','_logout_main') }}
+                    </div>
+                </div>
+        </div>
+    {%  endif %}
+</div>

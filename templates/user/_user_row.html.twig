@@ -1,0 +1,20 @@
+<div class="flex-row-container user-row">
+    {# using ids here to simplify access to user name and status elements #}
+    <div class="user-row-label">
+        <div class="user-name" id="userlabel-{{user.id}}">{{ user.name }}</div>
+        <div class="livestatusfeed userstatus-{{ user.id }}" data-id="{{ user.id }}"></div>
+    </div>
+    <div class="user-row-label">
+        {% if (user.lastLoginAt is null) %}
+            Never logged in
+        {% else %}
+            {{user.lastLoginAt|date('l jS F H:i:s')}}
+        {% endif %}
+    </div>
+    <div class="flex-row-container user-row-actions">
+        {# NOTE: isGranted only works with current session user, and admin cant delete themselves #}
+        {% if is_granted('ROLE_ADMIN') and user.id != app.user.id%}
+            {{ appButton('Delete','user-delete', user.id, 'userdelete') }}
+        {% endif %}
+    </div>
+</div>

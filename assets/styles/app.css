@@ -1,0 +1,148 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    background-color: #ccc;
+}
+
+#page-wrapper {
+    height: 100%;
+    padding: 0.5em;
+    box-sizing: border-box;
+}
+
+.flex-row-container {
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col-container {
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-centered{
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+#sidebar {
+    width: 25%;
+    margin: 0.5em;
+    height: 100%;
+}
+
+#page-content {
+    width: 75%;
+    padding: 1em;
+    background-color: #eee;
+}
+
+.button-row{
+    -webkit-flex: 1;
+    flex: 1;
+
+}
+
+.menu-label{
+    display:block;
+    text-align: center;
+    padding: 0.5em;
+}
+
+.faint-text{
+    opacity: 0.5;
+}
+
+/* some basic form styling */
+
+form {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    margin: 10% 25% 10% 25%;
+}
+
+input, button, label {
+    -webkit-flex: 1;
+    flex: 1;
+    padding: 1em 0 0.5em 0;
+}
+
+input[type='text'], input[type='password'] {
+    padding: 1em;
+}
+
+label {
+    text-align: center;
+}
+
+button[type='submit'] {
+    font-size: 1em;
+    padding: 0.8em;
+    width: 50%;
+    margin: 2.5em auto auto auto;
+}
+
+form .help-text{
+    text-align: center;
+    opacity: 0.5;
+}
+
+.livestatusfeed{
+    display: inline;
+    font-size: 0.8em;
+    opacity: 0.5;
+    color: #0000F0;
+}
+
+.status-highlight{
+    color: #CC0000;
+    font-weight: bold;
+}
+
+#intro-text {
+    padding-bottom: 5em;
+}
+#intro-text .title{
+    font-weight: bold;
+    margin: 1em 0 1em 0;
+}
+
+#home-page-lefthand {
+    float: left;
+    width: 40%;
+}
+
+#home-page-righthand{
+    float: left;
+    width: 60%;
+}
+
+@media screen and (max-width: 900px) {
+    #home-page-lefthand {
+        width: 50%;
+    }
+
+    #home-page-righthand{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    #home-page-lefthand {
+        float: none;
+        width: 100%;
+    }
+
+    #home-page-righthand{
+        float: none;
+        width: 100%;
+    }
+}

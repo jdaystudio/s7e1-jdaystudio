@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+    <div>
+        <div id="home-page-lefthand">
+            <div class="flex-centered">
+                <form action="{{ path('app_login') }}" method="post">
+                    <input type="hidden" name="_johndaytok_" value="{{ csrf_token('authenticate') }}">
+
+                    <label for="_johndayun_">Username</label>
+                    <input type="text" id="_johndayun_" name="_johndayun_" value="">
+
+                    <label for="_johndaypw_">Password</label>
+                    <input type="password" id="_johndaypw_" name="_johndaypw_">
+
+                    <label>Keep me logged in<br><span class="faint-text">(Disabled due to our auto eject behaviour)</span></label>
+                    {{ slidingCheckbox('_johndayrm_') }}
+
+                    <button type="submit">Login</button>
+
+                    <label class="faint-text">Login throttling enabled</label>
+                    <label>Admin : <div class="livestatusfeed adminstatus"></div></label>
+                    <label><div class="faint-text">NOTE: Another person may have changed the password, you might need to wait until the admin has been ejected and reset (~4 min intervals).</div></label>
+                </form>
+            </div>
+        </div>
+        <div id="home-page-righthand">
+            <div class="flex-centered" >
+                {% include 'fragments/_intro-text.html.twig' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

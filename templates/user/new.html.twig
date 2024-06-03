@@ -1,0 +1,32 @@
+{# templates/user/new.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Users{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('styles/user-admin-pages.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block pagecontent %}
+    Create a new user
+    <hr>
+    <div class="flex-centered">
+        {{ form_start(user_form) }}
+        {{ form_row(user_form._token) }}
+
+        {{ form_errors(user_form.name) }}
+        {{ form_label(user_form.name,'New Username') }}
+        {{ form_widget(user_form.name) }}
+
+        {{ form_errors(user_form.plainpassword) }}
+        {{ form_label(user_form.plainpassword,'Password') }}
+        {{ form_widget(user_form.plainpassword) }}
+
+        {% if is_granted('ROLE_ADMIN') %}
+        <label class="faint-text">As admin you can set a temporary weak password</label>
+        {% endif %}
+
+        {# NOTE: this is the name of the sumbit field as defined in our Form\UserType #}
+        {{ form_widget(user_form.save, { 'label': 'Create new user' }) }}
+    </div>
+{% endblock %}

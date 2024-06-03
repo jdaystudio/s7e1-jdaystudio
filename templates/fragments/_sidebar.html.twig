@@ -1,0 +1,13 @@
+<div id="sidebar">
+    {# user options #}
+    <label class="menu-label">User Options</label>
+    {{ appButton('Your Profile','profile') }}
+    {{ appButton('User Button 2','') }}
+    {{ appButton('User Button 3','') }}
+    {# admin options #}
+    {% if is_granted('ROLE_ADMIN') %}
+        <label class="menu-label">Admin Options</label>
+        {{ appButton('Manage Users','users') }}
+        {{ appButton('Admin Button 2','') }}
+    {% endif %}
+</div>

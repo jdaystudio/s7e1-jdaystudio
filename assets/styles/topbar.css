@@ -1,0 +1,28 @@
+#topbar-wrapper{
+    color: #eee;
+    background-color: #999;
+    height: 3.2em;
+}
+
+#user-welcome {
+    -webkit-flex: 3;
+    flex: 3;
+    padding: 1em;
+    align-self: center;
+}
+
+#prime-button-area {
+    -webkit-flex: 1;
+    flex: 1;
+    align-self: center;
+    padding-right: 3px;
+}
+
+#prime-button-area .flex-row-container{
+    justify-content: flex-end;
+}
+
+/* adjust spacing for right aligned buttons */
+.menubutton{
+    margin-left: 0;
+}
