@@ -39,6 +39,7 @@ trait SessionHelper
     /**
      * I don't use localhost but a separate vhost per development project
      * So we need to tell symfony where to connect each time
+     * I use .lo.cal instead of .wip as in the past a single dot domain caused problems
      */
     protected function localServer():array
     {

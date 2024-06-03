@@ -54,6 +54,9 @@ Tests
 - examples of a Unit, Integration and Application test
 - - using services in Integration testing
 - - alternative test environment parameters
+- - testing with a vhost that is NOT localhost
+- - setting up an authenticated user during tests (required CompilerPassInterface)
+- - following through multiple requests with a test user
 
 Application specific functionality
 - a single admin, NO self registration
