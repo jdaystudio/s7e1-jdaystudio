@@ -63,3 +63,4 @@ Application specific functionality
 - example application parameters (time limits)
 - live running status and processing of users
 
+Demo available at https://s7e1.jdaystudio.com
